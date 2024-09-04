@@ -1,0 +1,33 @@
+.product {
+    padding: 24px;
+
+    &__content {
+        margin: auto 0;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;   
+    }
+
+    .taxonomy-category {
+        background-color: rgb(235, 235, 235);
+        width: fit-content;
+        padding: 8px 12px;
+        border-radius: 5px;
+        
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: .75rem;
+            font-weight: bold;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .product {
+        padding: 64px;
+    }
+
+}

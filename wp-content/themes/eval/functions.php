@@ -39,8 +39,12 @@ function blankslate_enqueue()
     // potentially remove this
     wp_enqueue_script('jquery');
 
-    wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/src/styles/index.css');
+    wp_enqueue_script('location', get_stylesheet_directory_uri() . '/src/helpers/location.js', array('jquery'));
+
+    wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/src/public/styles/index.css');
+
 }
+
 add_action('wp_footer', 'blankslate_footer');
 function blankslate_footer()
 {
