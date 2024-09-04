@@ -1,0 +1,158 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px; }
+  .header__text {
+    font-size: 1rem; }
+  .header__links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 16px; }
+    .header__links .menu-item a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: .6rem; }
+
+@media screen and (min-width: 768px) {
+  .header__text {
+    font-size: 1.15rem; }
+  .header__links .menu-item a {
+    font-size: 0.85rem; } }
+
+.footer {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #222727;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px; }
+  .footer__copyright {
+    margin: auto 0; }
+  .footer__company {
+    color: white;
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin: 0px; }
+  .footer__jingle {
+    color: white;
+    font-size: 1rem;
+    margin: 4px 0 0 0; }
+  .footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 16px; }
+    .footer__links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: .75rem; }
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 32px 148px; }
+    .footer__links {
+      flex-direction: row; } }
+
+body, main {
+  font-family: 'Geist';
+  color: black; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-Black.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-Bold.woff") format("woff");
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-SemiBold.woff") format("woff");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-Thin.woff") format("woff");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geist UltraBlack';
+  src: url("../fonts/Geist-UltraBlack.woff") format("woff");
+  font-display: swap;
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Geist';
+  src: url("../fonts/Geist-UltraLight.woff") format("woff");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal; }
+
+.product {
+  padding: 24px; }
+  .product__content {
+    margin: auto 0; }
+  .product .taxonomy-category {
+    background-color: #ebebeb;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 5px; }
+    .product .taxonomy-category a {
+      text-decoration: none;
+      color: black;
+      font-size: .75rem;
+      font-weight: bold; }
+
+@media screen and (min-width: 768px) {
+  .product {
+    padding: 64px; } }
+
+body, main {
+  margin: 0px; }

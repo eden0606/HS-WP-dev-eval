@@ -1,14 +1,10 @@
-.home {
-    margin: 0px;
-}
-
 .header {
     display: flex;
     justify-content: space-between;
     padding: 8px;
 
     &__text {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 
     &__links {
@@ -22,6 +18,21 @@
             text-decoration: none;
             color: black;
             font-weight: bold;
+            font-size: .6rem;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        &__text {
+            font-size: 1.15rem;
+        }
+
+        &__links {
+            .menu-item a {
+                font-size: 0.85rem;
+            }
         }
     }
 }
