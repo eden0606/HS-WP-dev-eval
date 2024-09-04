@@ -1,0 +1,39 @@
+.hero {
+    padding: 24px 0;
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 0px;
+    }
+
+    .has-media-on-the-right {
+    }
+
+    &__gutter-types  {
+        margin-top: 64px;
+        background-color: rgb(235, 235, 235);
+
+        .wp-block-group__inner-container {
+            padding: 24px 0;
+        }
+    }
+
+    .wp-block-post-template {
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        padding: 24px 0px 64px 0px;
+        
+        .wp-block-post-template {
+            display: flex;
+        }
+    }
+}

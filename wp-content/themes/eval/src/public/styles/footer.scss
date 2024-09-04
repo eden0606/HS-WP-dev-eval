@@ -1,12 +1,10 @@
 .footer {
     box-sizing: border-box;
-    position: absolute;
-    bottom: 0;    
     width: 100%;
-        background-color: rgb(34, 39, 39);
-        display: flex;
-        justify-content: space-between;
-        padding: 32px;
+    background-color: rgb(34, 39, 39);
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
 
     &__copyright {
         margin: auto 0;

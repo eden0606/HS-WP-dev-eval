@@ -31,15 +31,15 @@ gulp.task('images', () => {
 //TODO EDIT THIS 
 let css = {
   sass: gulpSass(nodeSass),
-  src         : dir.src + '/styles/index.scss',
-  watch       : dir.src + '/styles/*.scss',
-  build       : dir.build+'/src/styles',
+  src         : dir.src + '/public/styles/index.scss',
+  watch       : dir.src + '/public/styles/*.scss',
+  build       : dir.build+'/src/public/styles',
 };
 // CSS processing
 gulp.task('css', () => {
   return gulp.src(css.src)
     .pipe(css.sass({outputStyle: 'nested'}))
-    .on('error', sass.logError)
+    .on('error', css.sass.logError)
     .pipe(postcss([
       autoprefixer
     ]))

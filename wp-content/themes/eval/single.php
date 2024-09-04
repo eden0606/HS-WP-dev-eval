@@ -1,9 +1,12 @@
 <?php get_header(); ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php if ( comments_open() && !post_password_required() ) { comments_template( '', true ); } ?>
-<?php endwhile; endif; ?>
-<footer class="footer">
-<?php get_template_part( 'nav', 'below-single' ); ?>
-</footer>
+<?php if (have_posts()):
+    while (have_posts()):
+        the_post(); ?>
+        <article class="product" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <div class="product__content" itemprop="mainContentOfPage">
+                <?php the_content(); ?>
+                <div class="entry-links"><?php wp_link_pages(); ?></div>
+            </div>
+        </article>
+    <?php endwhile; endif; ?>
 <?php get_footer(); ?>

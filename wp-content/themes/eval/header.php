@@ -11,17 +11,14 @@
     <?php wp_body_open(); ?>
     <div id="wrapper" class="hfeed">
         <header id="header" class="header" role="banner">
-            <div class="header__location">
-                <h1 class="header__text">Our gutters available in <span>your location here</span></h1>
-                <!--\
-            TODO chage this potentially?? do we want this showing all the time
-                    <?php
-                    if (is_front_page() || is_home() || is_front_page() && is_home()) {
-                        echo '<h1>';
-                    }
-                    ?>
-                -->
-            </div>
+            <div id="user-location"></div>
+
+            <!-- TODO REMOVE??
+             <?php
+             if (is_front_page() || is_home() || is_front_page() && is_home()) {
+                 echo '<h1>';
+             }
+             ?> -->
             <nav id="menu" class="header__nav" role="navigation" itemscope
                 itemtype="https://schema.org/SiteNavigationElement">
                 <?php wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'header__links')); ?>

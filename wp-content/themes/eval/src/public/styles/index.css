@@ -132,9 +132,26 @@ body, main {
   font-display: swap;
   font-style: normal; }
 
-.hero h2 {
-  font-size: 2.5rem;
-  font-weight: 900; }
+.hero {
+  padding: 24px 0; }
+  .hero h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0px; }
+  .hero__gutter-types {
+    margin-top: 64px;
+    background-color: #ebebeb; }
+    .hero__gutter-types .wp-block-group__inner-container {
+      padding: 24px 0; }
+  .hero .wp-block-post-template a {
+    text-decoration: none;
+    color: black; }
+
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 24px 0px 64px 0px; }
+    .hero .wp-block-post-template {
+      display: flex; } }
 
 .product {
   padding: 24px; }
