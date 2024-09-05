@@ -7,15 +7,42 @@
         margin-bottom: 0px;
     }
 
-    .has-media-on-the-right {
-    }
-
     &__gutter-types  {
         margin-top: 64px;
+        padding: 0 32px;
         background-color: rgb(235, 235, 235);
 
         .wp-block-group__inner-container {
             padding: 24px 0;
+        }
+    }
+
+    &__gutter-card {
+        display: block;
+    }
+
+    &__testimonials {
+        padding: 24px;
+        margin-top: 32px;
+
+        h2 {
+            margin-top: 8px;
+        }
+    }
+
+    &__testimonials-category {
+        background-color: rgb(235, 235, 235);
+        border-radius: 5px;
+        padding: 8px 16px;
+        width: max-content;
+        margin: 0 auto;
+    }
+
+    &__testimonials-grid {
+
+        .wp-block-group__inner-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
         }
     }
 
@@ -34,6 +61,10 @@
         
         .wp-block-post-template {
             display: flex;
+        }
+
+        &__gutter-types {
+            padding: 0 64px;
         }
     }
 }
