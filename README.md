@@ -22,7 +22,6 @@ The home page and gutter product pages are all customizeable via the admin panel
 
 # Challenges and Improvements
 - Due to the time constraints I was not able to successfully implement a carousel and lightbox for the individual gutter products. My ideal implementation would have been to use an existing plugin for both the carousel and lightbox functionality. My first attempt at the carousel was using MetaSlider which ended up only showing one image. 
+- I don't believe a SQL DB was set up with this site, so I didn't have a dump to export.
 - To further optimize the CSS, I would have liked to make use of more of the SASS capabilities like variables and mixins. I also would have liked to use SASS modules to ensure less classname conflicts with locally scoped classnames, but hadn't used modular CSS for Wordpress before and didn't want to sink too much time into more marginal benefits.
 - I would have also liked to include some sort of Browsersync capability with my Gulp build process to automatically reload and update the site as CSS changes are made to make the development process more efficient.
-
-
