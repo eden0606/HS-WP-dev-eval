@@ -2,14 +2,13 @@
 # Getting Started
 1. Clone repo
 2. Run `docker-compose up`
-3. Navigate to `http://localhost/wp-admin`
-    user & pass: admin
+3. Navigate to `http://localhost/wp-admin` > user & pass: admin
 4. Run `npm install` > install all npm packages necessary for themes
 5. Run `gulp build` > compiles css, minifies js/css/images
 
 # Architecture
 ## JS/JQuery
-I utilized Javascript for the location functionality that hits the `ipapi` API and returns the user's city and state information. This data is then used to populate the location in the header if the request was successful and will otherwise have default text. I used JQuery to help determine when the DOM is loaded so the header element on the page would exist for the location data injection to occur.
+I utilized Javascript for the location functionality that hits the `ipapi` API and returns the user's city and state information. This data is then used to populate the location in the header if the request was successful and will otherwise have default text. I used JQuery to help determine when the DOM is loaded so the header element on the page would exist for the location data injection to occur. I also used JS when setting up my Gulp file.
 
 ## SASS
 I decided to use SASS for styling mainly for the nesting capabilities it offers among other features it has like variables, mixins, functions, etc. that regular CSS doesn't offer. I kept the overall styling fairly simple and followed the mocks, ensuring that it was responsive throughout.
