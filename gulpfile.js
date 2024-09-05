@@ -1,5 +1,3 @@
-// TODO EDIT THIS
-'use strict';
 import gulp from 'gulp';
 import imagemin from 'gulp-imagemin';
 import gulpSass from 'gulp-sass';
@@ -7,47 +5,66 @@ import nodeSass from 'node-sass';
 import newer from 'gulp-newer';
 import autoprefixer from 'autoprefixer';
 import postcss from 'gulp-postcss';
+import cleanCSS from 'gulp-clean-css';
+import GulpUglify from 'gulp-uglify';
 
 const
-  dir = {
+  baseDir = {
     src         : 'wp-content/themes/eval/src',
     build       : 'wp-content/themes/eval'
   }
 
-// TODO EDIT
-// image settings > minifies images
-const images = {
-  src         : dir.src + '/public/',
-  build       : dir.build + '/public/'
-};
-// image processing
+// minifies images used in repo
+const imageDir =  baseDir.src + '/public/images/';
+
 gulp.task('images', () => {
-  return gulp.src(images.src)
-    .pipe(newer(images.build))
+  return gulp.src(imageDir)
+  // passes in only new images
+    .pipe(newer(imageDir))
+    // minifies
     .pipe(imagemin())
-    .pipe(gulp.dest(images.build));
+    .pipe(gulp.dest(imageDir));
 });
 
-//TODO EDIT THIS 
-let css = {
-  sass: gulpSass(nodeSass),
-  src         : dir.src + '/public/styles/index.scss',
-  watch       : dir.src + '/public/styles/*.scss',
-  build       : dir.build+'/src/public/styles',
+// compiles SASS files into minified CSS
+const cssDir = {
+  src         : baseDir.src + '/public/styles/index.scss',
+  watch       : baseDir.src + '/public/styles/*.scss',
+  build       : baseDir.build+'/src/public/styles',
 };
-// CSS processing
+
+const sass = gulpSass(nodeSass);
+
 gulp.task('css', () => {
-  return gulp.src(css.src)
-    .pipe(css.sass({outputStyle: 'nested'}))
-    .on('error', css.sass.logError)
+  return gulp.src(cssDir.src)
+    .pipe(sass({outputStyle: 'nested'}))
+    // logs error 
+    .on('error', sass.logError)
+
+    // parses sass to css
     .pipe(postcss([
       autoprefixer
     ]))
-    .pipe(gulp.dest(css.build))
+
+    // minifies css
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(cssDir.build))
 });
 
+// watches for changes in css files to automatically update css
 gulp.task('watch', () => {
-  return gulp.watch(css.watch, gulp.series('css'))
+  return gulp.watch(cssDir.watch, gulp.series('css'))
 })
 
-gulp.task('build', gulp.series('css', 'watch'));
+// minifies js file
+const jsDir = baseDir.src + '/helpers';
+
+gulp.task('js', () => {
+  return gulp.src(jsDir)
+    // minifies js files
+    .pipe(GulpUglify())
+    .pipe(gulp.dest(jsDir))
+});
+
+// kicks off initial css compliation and watches for any additional changes to css file
+gulp.task('build', gulp.series('css', 'js', 'images', 'watch'));
